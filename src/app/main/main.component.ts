@@ -25,7 +25,6 @@ export class MainComponent implements OnInit {
 
   onSearchResults(results: Observable<SearchResults>): void {
     this.searchResults$ = results.catch((error: any) => {
-      console.log('Error: ', error.statusText);
       this.errorMessage = error.statusText;
       return Observable.throw(error.status)
     });
